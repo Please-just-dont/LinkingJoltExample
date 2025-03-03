@@ -1,0 +1,48 @@
+cmake_minimum_required(VERSION 3.22)
+
+
+project(my_project
+VERSION 1.0
+  LANGUAGES CXX C
+)
+
+
+
+
+add_executable(main
+${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
+
+)
+
+
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/JoltPhysics-master/Build)
+
+
+
+# WITH THE BELOW COMMENTED OUT THE TERMINATE HANDLER IS CALLED AND THE PROGRAM EXITS IMMEDIATELY
+# UNCOMMENTED THE TERMINATE HANDLER IS NO LONGER CALLED AND THE PROGRAM HANGS FOR ABOUT 2 SECONDS BEFORE EXITING
+# I TRIED THIS IN BOTH RELEASE AND DEBUG MODE
+target_link_libraries(main PUBLIC Jolt)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
